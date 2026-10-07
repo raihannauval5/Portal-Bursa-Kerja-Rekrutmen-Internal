@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>HR Recruiter Dashboard - Seleksi Pelamar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container admin-container">
+    <header>
+      <h1>HR Portal - Applicant Tracking System</h1>
+      <p>Kelola berkas masuk, atur jadwal interview, dan tentukan hasil seleksi pelamar</p>
+    </header>
+
+    <!-- Kartu Statistik Pelamar -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Pelamar</h3>
+        <p id="stat-total">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Terkirim (Baru)</h3>
+        <p id="stat-terkirim">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Tahap Interview</h3>
+        <p id="stat-interview">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Diterima</h3>
+        <p id="stat-diterima">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Ditolak</h3>
+        <p id="stat-ditolak">0</p>
+      </div>
+    </div>
+
+    <!-- Tabel Daftar Pelamar Masuk -->
+    <div class="card full-width-card">
+      <div class="admin-toolbar">
+        <h2>Daftar Berkas Pelamar Masuk</h2>
+        <div class="filter-box">
+          <input type="text" id="search-input" placeholder="Cari Nama / Kode / Posisi..." onkeyup="renderTabelAdmin()">
+          <select id="filter-posisi" onchange="renderTabelAdmin()">
+            <option value="semua">Semua Posisi</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Engineer">Backend Engineer</option>
+            <option value="UI/UX Designer">UI/UX Designer</option>
+            <option value="HR & Admin Staff">HR & Admin Staff</option>
+          </select>
+          <button class="btn-secondary" onclick="resetSemuaData()">Reset Data</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Pelamar & Kontak</th>
+              <th>Posisi Dilamar</th>
+              <th>Ringkasan CV</th>
+              <th>Status Seleksi</th>
+              <th>Catatan HR & Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabel-body-admin">
+            <!-- Data dimasukkan via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script-admin.js"></script>
+</body>
+</html>

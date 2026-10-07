@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Karir & Rekrutmen Internal - Pelamar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Portal Karir & Lowongan Kerja</h1>
+      <p>Temukan posisi impian Anda dan pantau status lamaran secara langsung</p>
+    </header>
+
+    <!-- Form Lamaran Kerja -->
+    <div class="card">
+      <h2>Formulir Lamaran Kerja</h2>
+      <form id="form-lamaran">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Contoh: Budi Santoso" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email / No. HP</label>
+            <input type="text" id="kontak" placeholder="budi@example.com / 081234..." required>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Posisi yang Dilamar</label>
+            <select id="posisi" required>
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Engineer">Backend Engineer</option>
+              <option value="UI/UX Designer">UI/UX Designer</option>
+              <option value="HR & Admin Staff">HR & Admin Staff</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Ringkasan CV / Pengalaman Kerja</label>
+            <textarea id="cv-summary" placeholder="Jelaskan secara singkat latar belakang pendidikan, keahlian, dan pengalaman kerja Anda..." required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Kirim Lamaran Sekarang</button>
+      </form>
+    </div>
+
+    <!-- Riwayat Lamaran Saya -->
+    <div class="card">
+      <h2>Status Lamaran Saya</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Lamaran</th>
+              <th>Posisi Dilamar</th>
+              <th>Tanggal Kirim</th>
+              <th>Status Seleksi</th>
+              <th>Catatan HR</th>
+            </tr>
+          </thead>
+          <tbody id="tabel-body-user">
+            <!-- Data dimasukkan via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script-user.js"></script>
+</body>
+</html>
